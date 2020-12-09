@@ -23,4 +23,16 @@ public class RestEstudiantes {
 			e.printStackTrace();
 		}
 	}
+	
+	@Path("/actualizar")
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	public void actualizar(Estudiante estudiante){
+		ServicioEstudiante serv = new ServicioEstudiante();
+		try {
+			serv.actualizarEstudiante(estudiante);
+		} catch (BDDException e) {
+			e.printStackTrace();
+		}
+	}
 }
